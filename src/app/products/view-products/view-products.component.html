@@ -1,0 +1,7 @@
+<div class="col-md-3 float-left" *ngFor="let product of products; index as i;">
+  <div class="card mt-3">
+    <img [src]="product.productImageURL" alt=""
+    width="100%" height="200px">
+    <h6 class="text-center">{{ product.productName }}</h6>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="col-md-4 m-auto">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="text-center" *ngIf="isLoading">
+      <app-spinner></app-spinner>
+    </div>
+    <div class="card mt-4" *ngIf="!isLoading">
+      <div class="card-header">Add Product</div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="productName">Name</label>
+          <input type="text" formControlName="productName" name="productName" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="productPrice">Price</label>
+          <input type="number" formControlName="productPrice" name="productPrice" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="productImageURL">Image URL</label>
+          <input type="text" formControlName="productImageURL" name="productImageURL" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="productDescription">Description</label>
+          <input type="text" formControlName="productDescription" name="productDescription" class="form-control">
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary float-right" [disabled]="form.invalid">submit</button>
+      </div>
+    </div>
+  </form>
+</div>
